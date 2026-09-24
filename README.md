@@ -24,3 +24,5 @@ uv run mypy src tests
 ```bash
 uv run python -m medianview.app
 ```
+Then open your browser at `http://127.0.0.1:5001`.
+

@@ -19,7 +19,7 @@ def create_app() -> Flask:
 
     @app.route("/", methods=["GET", "POST"])
     def index() -> str | tuple[str, int] | Response:
-        if request.method == "GET":
+        if request.method in ("GET", "HEAD"):
             return render_template("index.html")
 
         if "image" not in request.files:
@@ -101,4 +101,4 @@ def create_app() -> Flask:
 app = create_app()
 
 if __name__ == "__main__":
-    app.run(host="127.0.0.1", port=5000, debug=True)
+    app.run(host="127.0.0.1", port=5001, debug=True)
